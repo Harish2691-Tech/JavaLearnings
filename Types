@@ -1,0 +1,28 @@
+Types :
+-- int - to store numbers
+
+Primitive and References Types:
+
+primitive - to store simple values
+Reference (Non primitive types) - to store complex objects
+
+Type  Bytes  Range
+byte  1      -128 to 127
+short  2    -32k to 32k
+int   4      -2b to 2b   (upto 2 billion)
+long   8
+float  4
+double  8
+char    2      A,b,c,d
+boolean  1    true / false
+
+
+------
+
+int accepts upto 2 billion. so for larger numbers we can use long. we need to use L suffix for the long data
+
+long viewsCount = 4326634467L;
+long viewsCount = 4_326_634_467L;
+
+
+
