@@ -112,6 +112,14 @@ replace()
 
 Escape Sequence :
 
+To use special characters like ",\ means we use to prefix with \ 
+\"
+\\
+\n new line
+\t tab
+
+
+
 
 
 
