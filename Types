@@ -24,5 +24,95 @@ int accepts upto 2 billion. so for larger numbers we can use long. we need to us
 long viewsCount = 4326634467L;
 long viewsCount = 4_326_634_467L;
 
+For decimal values use float and double.
+
+float price = 10.22; // getting error
+in java a number with decimal is considerd as double. to mention it is float, append suffix with F.
+
+float price = 10.22F;
+
+
+char with single quotes.
+
+char letter = 'A';
+
+
+string is sequence of characters.
+
+ boolean isEligible = true / false; // allocation memory is 1 byte.
+
+
+For primitive type memories allocated and release by Java Run Time environment. 
+primitive types dont have members.
+
+Example :
+ public static void main(String[] args) {
+        System.out.println("Hello world");
+        int age=30, temp=20,yaxis=50;
+        age= 35;
+        int viewsCount = 1_234_567_890;
+        byte bb = 127;
+        boolean isEligible = true;
+        System.out.println(age);
+    }
+--------------
+
+Reference type : (Non primitive type):
+
+For reference type, we have to allocate the memory. but do nt need to release the memory. JRE will take care of it.
+reference type have members. object with dot operator we can access the members.
+
+Date now = new Date();
+now.getTime(); // 
+now is instance od Date() class. 
+
+--------------------
+
+Memory management in Primitive and reference types:
+
+byte x=1;
+byte y = x;
+
+x and y are store separately and in different location. So completely independent of each other.
+
+--
+
+Point point1 = new Point(1,2);
+
+        Point point2 = point1;
+
+
+1st it allocates some memory to pointer object. Lets say the address of the memory location is 100.
+Then its going to allocate memory to point2. here it will store the address of pointer1. Not the value.
+
+
+allocate memory for the pointer object. P1 and P2 pointing the same memory address of the pointer object. 
+
+Reference types= are copy by the references.
+Primitive types = are copy by the values.
+
+Strings:
+
+string is reference type in java.
+
+we can access string methods uisng . operator. 
+
+
+Diff b/w parameters and arguments :
+      message.replace(target:"!",replacement:"*")
+
+target and replacement - are parameters.
+! and * - are arguments.
+
+toLowerCase()
+toUpperCase()
+trim()
+replace()
+---------------xxxxxxx-----------xxxxx-------------
+
+Escape Sequence :
+
+
+
 
 
