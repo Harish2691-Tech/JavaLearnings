@@ -1,0 +1,19 @@
+Why DTO conversion is importance before returning the response.
+
+request -> db call -> response as a Entity -> DTO convertion -> Response
+
+w/0 DTO conversion we can return the Entity as response. 
+
+but the problem is,
+
+Lets assume the Entity as the below info,
+
+Public class User.
+id, name, password, address and pin.
+
+If we return the User entity as response. we pass the the sensitive info.
+
+thats why we convert intoi DTO class and required info only sent.
+
+so DTO conversion is important before returing the response.
+
