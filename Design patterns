@@ -1,0 +1,7 @@
+Standard Design Pattern
+
+This is called the Factory Method Pattern
+
+👉 Key idea:
+
+“Don’t create objects directly. Ask a method to create them.”
