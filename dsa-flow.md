@@ -1,0 +1,39 @@
+DSA :
+- Big O
+- Arrays and strings
+  - Two pointers
+  - Sliding windos
+  - Prefix sum
+- Hashing
+  - Checking for eixstinace
+  - Counting
+- Linked list
+  - Fast and slow pointer
+  - Reverse linked list
+- Stack and queue
+  - String
+  - Queueus
+  - Monotic
+- Trees and graphs
+  - Binary trees
+    - DFS
+    - BFS
+  - Binary search trees
+  - Graphs
+    - DFS
+    - BFS
+    - Implicit graphs
+- Heaps
+  - Top k
+- Greedy
+  - Greedy algo
+- Binary search  
+  - On arrays
+  - On solution spaces
+- Backtracking
+  - Generation
+- Dynamic programming
+  - Framework for dp
+  - 1 dimension problems
+  - Multi dimensional problems
+  - Matrix DP
