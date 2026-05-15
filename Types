@@ -236,6 +236,20 @@ Formatting numbers :
 
 Abstract class : Cant create instance or object for an abstract class.
 
+NumberFormat currency = NumberFormat.getCurrencyInstance();
+
+Why not new NumberFormat()?
+
+👉 Answer:
+
+It’s an abstract class
+Uses factory method for flexibility, encapsulation, and locale-aware formatting
+
+Example: 
+String currency = NumberFormat.getCurrencyInstance().format(1000); // method chaining
+        System.out.println(currency);
+------
+
 
 
 
