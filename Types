@@ -157,6 +157,88 @@ output : [[1, 2, 3], [4, 5, 6]]
 Constants : 
 
 
+final float Ri = 3.14F;
+
+again if u try to change, Ri = 1; // it shows error. bcoz final keyword in java act as constant.
+
+final variable → must be assigned only once
+Cannot be reassigned later
+
+----------------------
+
+Arithmetic expressions :
+
+10/3 => will give 3 only... not 3.33333 
+bcoz in java the whole is divided by whole num means... it will give whole num only
+
+we need to convert this to get the decimal value
+
+(double)10 / (double)3 = 3.333333333
+
+double division = (double)10 / (double)3 = 3.333333333 ;
+
+-----
+int x = 1;
+int y = x++; // x is assigned to y then only increment is happening.
+System.out.println(x);
+System.out-println (y);
+
+output :
+x->2
+y->1
+
+----
+Augumented assigmnet operators (compound assigmnet operators)
+x = x+2;
+x += 2;  // Augumented assigmnet operators
+
+
+---- xxxxxxx-------xxxxxxx-----
+
+Order od operations :
+()
+*\
++-
+
+--------xxxx-----
+
+casting / type conversion :
+
+// Implicit casting
+// byte > short › int › long > float > double
+double x = 1.1;
+double y = x + 2; // implict casting from 2 to 2.0
+System.out-println (y);
+
+-----
+
+Explict casting
+double x = 1.1;
+int y = (int)x + 2;
+System.out. println (y);
+----
+int i = 1
+double digit = Double.parseDoube(i) +2.2 ;  // it parse 1 to 1.0
+
+------xxxxxxx-------xxxxxxx---------xxxxxxx
+
+Math class :
+
+Math.floor(1.1)  // 1
+Math.ceil(1.1)  // 2
+Math.round(1.1) //1
+Math.max(1,2)  //2
+Math.random() // provide random number
+int data = (int) Math.Round( Math.Random() *100) ;
+
+-----xxxxx-------xxxxx---------xxxx
+Formatting numbers 
+
+
+
+
+
+
 
 
 
