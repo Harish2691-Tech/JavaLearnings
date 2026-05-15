@@ -232,7 +232,12 @@ Math.random() // provide random number
 int data = (int) Math.Round( Math.Random() *100) ;
 
 -----xxxxx-------xxxxx---------xxxx
-Formatting numbers 
+Formatting numbers :
+
+Abstract class : Cant create instance or object for an abstract class.
+
+
+
 
 
 
