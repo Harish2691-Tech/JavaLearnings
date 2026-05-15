@@ -250,7 +250,12 @@ String currency = NumberFormat.getCurrencyInstance().format(1000); // method cha
         System.out.println(currency);
 ------
 
+Read input :
 
+//        Scanner scan = new Scanner(System.in);
+//        System.out.print("Enter data: ");
+//      String data=  scan.nextLine().trim();
+//        System.out.println("Enterded data: "+data);
 
 
 
