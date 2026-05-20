@@ -12,6 +12,12 @@ Common compile time error :
 
 Debugger : 
 
+control+F8 -> to insert break point then in terminalwe can see the values of each variable.
+In call stack, all the run methods are in reverse order.
+------xxxxxxx-------
+
+Packaging java applications: 
+
 
 
 
