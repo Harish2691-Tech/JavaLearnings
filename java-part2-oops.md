@@ -77,7 +77,7 @@ When a method ends / exit -> java run time will immediately remove all the varia
 
 ----x----xxxxxx----xxxxxx------
 
-Procedua=ral programming : 
+Proceduaral programming : 
 
 
 
