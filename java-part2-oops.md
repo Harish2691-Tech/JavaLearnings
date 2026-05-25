@@ -70,5 +70,16 @@ public String text = "";
 Memory allocation : 
 
 
+Deallocate memory : 
+
+var obj1 = new Object();
+When a method ends / exit -> java run time will immediately remove all the variables (obj1) that stored in the stack. Now we endup with object in the heap (new Object()). since stack is removed there is no reference in the new Object(). so GC will remove it from the heap. This is called garbage collection (GC).
+
+----x----xxxxxx----xxxxxx------
+
+Procedua=ral programming : 
+
+
+
 
 
