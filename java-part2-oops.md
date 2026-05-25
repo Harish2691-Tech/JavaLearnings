@@ -79,6 +79,14 @@ When a method ends / exit -> java run time will immediately remove all the varia
 
 Proceduaral programming : 
 
+- With a sigle class using Main method and multiple functions (Procudures) are called PRocedural programming. Instead of write entire code in main method, split the code into multiple fuctions also called as procedural programming. For this issue will be resolved by OOps.
+- If something goes wrong, we have to go all opver the places in the code and work on it.
+- Lack of re-usablity
+- If a function have multiple parameters means, it should not a proper code. we have to implment oops here
+
+---xxxxxx------xxxx------xx-x-------
+
+Encapsulation : 
 
 
 
