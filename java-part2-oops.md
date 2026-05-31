@@ -214,7 +214,84 @@ setBaseSalary (baseSalary) ; setHourlyRate (hourlyRate) ;
 
 Static members: 
 - in oops a class can have 2 types of members, 1. instance members and 2. static members
-- 
+- w/o creatimg objects we can directly use it with classname
+- if the value is independent of object means then we can inroduce static fields.Also we can share it accross all all obejcts.
+- Main method in the application is static. This is enable the java run time to directly call it w/o creating objects. so thats why the main methods is always be declared with static.
+- Inside a class we have have static and normal fields and functions. IF we want to call the normal function inside a static function, we need to create object for class to call normal function inside a static function
+- static methods can only see static fields of the class.
+- If static methods want to access non static fields, 
+
+Example : 
+  class Car {
+    String model = "BMW"; // instance field
+
+    static void showModel() {
+        System.out.println(model); // ❌ Compilation Error
+    }
+
+}
+
+Reason :
+The compiler complains because model belongs to an object, but showModel() is running without any object.
+
+------
+
+Solution 1: Create an Object
+
+class Car {
+    String model = "BMW";
+
+    static void showModel() {
+        Car car = new Car();
+        System.out.println(car.model);
+    }
+}
+
+Here, the static method creates an instance and accesses the field through that instance.
+
+-----
+
+Solution 2: Pass an Object as a Parameter
+
+This is usually the better approach.
+
+class Car {
+    String model = "BMW";
+
+    static void showModel(Car car) {
+        System.out.println(car.model);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car car = new Car();
+        Car.showModel(car);
+    }
+}
+
+---------
+
+Default access modifier :
+
+In Java, if you don't specify an access modifier, the default is package-private (sometimes called default access).
+
+/* package-private */ class Car {
+    /* package-private */ String model;
+
+    /* package-private */ static void showModel() {
+        System.out.println(model);
+    }
+}
+
+-------
+xxxxx-----xxxxx-------xxxxx--------
+
+Moving away from static fields : 
+
+
+
+
 
 
 
