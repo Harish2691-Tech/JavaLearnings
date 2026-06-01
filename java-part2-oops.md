@@ -289,8 +289,33 @@ xxxxx-----xxxxx-------xxxxx--------
 
 Moving away from static fields : 
 
+- we use constructor to initialize instance fields 
+- use a class instance inside another class.
+  - in class 2 we initialize class1. uisng class2 constructor with parameter we can initialize class1.
+    public class Class2{
 
+    private Class1 class1;
 
+    public Class2(Class1 class1){
+    this.class1 = class1;
+    }
+    }
+
+------xxxx-----xxxxx---------xxxx-----------
+
+Moving static fields : 
+
+Instead of using the the static fields in main class and pass it as parameter to another class object. move it to the actual class and use it.
+
+----xxxxxx----xxxx----xxxx
+
+Extracting duplicate logic : 
+
+- Instead of writing the same logic repeatedly inside different fuctions... move that logic into a private method and call the method to other methods. This avoids duplidate logics.
+
+- 
+
+    
 
 
 
