@@ -318,10 +318,183 @@ Extracting duplicate logic :
 
   This line means for(double balance : double[]) - from the array get one by one data and execute it.
 
-  
+-----xxxxxx-----xxxx-----xxxxx-----
 
-    
+Inheritance : 
+ClassB extends ClassA
 
+ClassB have the fwatures of ClassA. 
+
+- By default all the classes are extends from thr Object class in Java. But this is not explicitly done. it done by internally.
+
+---xxxxx-----xxxx------
+
+Object Class :
+- By default all the classes are extends from thr Object class in Java compiler. But this is not explicitly done. it done by internally.
+
+- var obj = new Object();  // its available in java.lang package. so its available in everywhere
+- Java compiler automatically extends this Object class to all Classes.
+- It have getClass , equals, hashcode members
+- getclass returns Class object.  With this we can read metadata of an object. We can define all the fields and methods combined in that object.
+- equals - we can use it t comparing objects.
+- hashcode - returns an integer based on the address of the object in memory.
+- toString() - retuns the string representation on that object.
+- few others methods -> notify, notifyAll and wait that are used in concurrenchy.
+
+- obj.hashcode() -> 1258902577 --> lot of poeple thins this is the address of the object in memory. But its not. The address of the object goes to a special fucntion claled Hash function. and the job of this fuction is to get a value and map it to a numeric value. The one of the usageis comparing objects in a quality.
+- toString() - returns the string representation of an object. it have 2 parts. one is fully qualified name of the class.(it cona=tains the package is orifinally from) and another is hashcode (represented as hexadecimal-> hexadecimal with both numbers and a-z)
+- com.codewithmosh.TextBox@5b2133b1
+
+-----xxxxxx------xxxxx------
+
+constructors in inheritence : 
+- consider we have parent and child class. If the parent class ahev constructor with parameter then in our child class constructor we have to pass the values with super fucntion inside the coinstructor.
+
+- Class Child
+
+- public Child(){
+    super (true); // this should be very 1st stamenet in the child class constructor
+- }
+
+----xxxxx------xxxxxx-----
+
+Access modifiers : 
+- protected is like public and package. means inside the package we can access the class. but outside the package , we cant access.
+- public - we can access it everywhere.
+- private - access it only inside the class. not even access by inherited classes.
+- default (package-private) - same class and same package we can access.
+
+- best practice use public and private.
+
+-----xxxxx-----xxxxxxp-------
+
+Overriding Methods :
+- sometimes we inherit some methos to child class. but we are not happy about the implementation. we want to change it. to implement this, we can use method override.
+- We use Annotations. An annotations is basically a label that we attach to a class member. wuith this we get extra information to the java compiler. we are telling the java compiler that we are overridng the toString method in this class.
+- @Override annotation in the class member
+- For override the methodname and return type should be same. 
+
+------xxxxxx-----xxxxxx-------xxxxxx
+
+  Upcasting and Downcasting : 
+
+  public static void main (Stringll args) {
+var contral = new UIControl (isEnabled: true);
+var textBox = new TextBox ();
+show (textBox);
+｝
+public static void show(UIControl control) {
+var textBox = (TextBox) control;
+textBox. setText("Hello World' );
+System.out println (control);
+}
+
+- UIControl is the parent class and TextBox is the child or sub class.
+- in a method the paramter is parent class but we are passing child class object. this is called Upcasting.in compile time we can only access the parent class members. But in run time it act as child class object.
+- var textBox = (TextBox) control; --> this is downcasting here we can access the child class members.
+- If the created instance is parent class and we want to downcast to child class, we get classcast exception and program crashed. To avoild this  we can use control instanceof TextBox condition, it=f true we can access it orlse handle with condition
+- 
+------xxxxxxx------xxxxxx----
+
+  Comparing Objects :
+
+  public static void main (Stringll args) {
+    var point1 = new Point (x: 1, y: 2) ;
+    var point2 = new Point (x: 1, y: 2) ;
+      System.out-println(point1 == point2);
+
+｝
+
+- the output is false. both objects are reference types. Values that are stored in that variables are address of the objects in memory.
+- -----xxxx------xxxx------xxx----
+
+  Polymorphism :
+
+  - Excapsulation , Abstraction and Inheritence.
+  - Polymorphism -- Many forms
+  - in the base classe we have 1 method and we override this to child class and change the logic. 
+
+-----xxx-------xxxx
+
+Abstract classes and methods : 
+
+- Abstract means - more common one not a specific one. UIControl is common one, textBox and RadioButton are specific one.
+- We cant instatiate the Abstract class.
+- We only can extends and create new class with them.
+- For method also we can use abstract, but we only define the method.
+- public abstract void render();
+- xxxx----xxxx---xx
+
+Final Classes and Methods : 
+
+- When we define a class with Final, we cant extends it. i mean cant inherit it.
+- If we define a method with Final. we cant override it.
+-----xxxx-----xxxx-----
+
+  Deep Inheritence :
+  - Avoid deep inheritance. inheritance is good upto 2 levels. more than 3 leel is not good and risk is high to manage the code.
+ 
+----xxxx----xxxx
+Multiple Inheritance :
+- Java doesnt support Multiple inheritance. Espically the Diamond problem.
+  class A {
+    void show() {
+        System.out.println("A");
+    }
+}
+
+class B extends A {
+}
+
+class C extends A {
+}
+
+class D extends B, C { // Imagine this were allowed
+}
+
+------
+D d = new D();
+d.show();
+
+----
+Which show() should Java use?
+
+B's version?
+C's version?
+A's version?
+
+This ambiguity is called the Diamond Problem.
+
+      A
+     / \
+    B   C
+     \ /
+      D
+
+  -------
+
+
+  class Father {
+    void advice() {
+        System.out.println("Father");
+    }
+}
+
+class Mother {
+    void advice() {
+        System.out.println("Mother");
+    }
+}
+
+class Child extends Father, Mother { // Not allowed
+}
+
+
+Java avoids this confusion by disallowing multiple inheritance of classes.
+
+**How Java Solves It: Interfaces**
+
+**Java allows a class to implement multiple interfaces:**
 
 
 
