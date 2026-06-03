@@ -313,7 +313,12 @@ Extracting duplicate logic :
 
 - Instead of writing the same logic repeatedly inside different fuctions... move that logic into a private method and call the method to other methods. This avoids duplidate logics.
 
-- 
+- for(double balance : calculator.getRemainingBalances())
+    System.out.println(NumberFormat.getCurrencyInstances().format(balance));
+
+  This line means for(double balance : double[]) - from the array get one by one data and execute it.
+
+  
 
     
 
