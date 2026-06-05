@@ -498,5 +498,10 @@ Java avoids this confusion by disallowing multiple inheritance of classes.
 
 
 ------
+---xxxxx-----xxxxxx-----xxxxx----
+
+Dependency Injection : 
+- 
+
 
 
