@@ -497,4 +497,6 @@ Java avoids this confusion by disallowing multiple inheritance of classes.
 **Java allows a class to implement multiple interfaces:**
 
 
+------
+
 
