@@ -585,9 +585,65 @@ Actual Object Type
 
 to decide which implementation to execute.
 
-----
+----xxxx----xxxx------xxxx----
 
+1. Constructor Injection (Most Common) :
+     - This is also called as Poor mans dependency injection.
+     - For Larger applications, we have lot of classes with dependencies. For that we are going to use Dependency framework. Spring is popular one of them.
 
+-----xxxx-----xxxx-----xxxxx
+2. Setter Injection : 
+  - With the use of setter injectiion we can change the dependencies of the class throughtout the lifetime of ur application.
+    public void setCalculator(TaxCalculator calculator){
+      this.calculator = calculator;
+    }
 
+   // in Main class: 
+
+   var calculator = new TaxCalculator2018 ( tax);
+var report = new TaxReport (calculator);
+report. show();
+report.setCalculator(new TaxCalculator2019());  // new dependency class object injected and values updated
+report. show();
+
+3. Method injection :
+    - instead of constructor / setter injection. while calling the method we are passing the dependency object via mwthod. this is Method injection.
+    - we can use new objects for multiple time calling of the methods.
+
+Make sure Interface should be light weighted. Dont make the interface as big with lot of methods. 
+
+----xxxxx-----xxxx------xxxx-----
+
+Interface segregation principle : 
+- Divide bigger interfaces into smaller ones. With this we can reduce the impact of changes.
+- Each interface should focus on a single capablity.
+- We can inherit multiple interfaces to an interface
+
+**  Remember it **
+- A class cannot have multipe parents
+- But an Interface can have multiple parents
+
+----xxxxx---xxxx-----xxxxxx
+
+Bad features in Java Interface : 
+- **Fields in Interface.**
+  - float incomeTaxRate = 30;
+  - It is final one. should not be change over the class itself. For constanst we can use inside classes
+- **Static Method in Interface**
+  - Avoid static methods in interfaces. bcoz we are writimg some implementation logic inside this methiod. For static methods we can use abstract claess and implement the intefcae then this abstract will inherit in child classes.
+  - **Private methods in Interface** in Java 9
+  - To avoid redendent logic, they introduced private methods in Interface.
+  - But avoid this feature.
+ 
+----xxxx--x-x----xx-x-x-x-x-x-
+
+Difference between Interface and abstract classes : 
+- Interfaces
+  - Pure contracts, there is no code just mdeclaration.
+  - To build Loosely coupled, extensible, testable applications.
+- Abstract classe -
+-   - PArtially implemented classes.
+    - we use this to share code to few classes.
+    - 
 
 
