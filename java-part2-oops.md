@@ -501,7 +501,93 @@ Java avoids this confusion by disallowing multiple inheritance of classes.
 ---xxxxx-----xxxxxx-----xxxxx----
 
 Dependency Injection : 
-- 
+- Dependency Injection is a design pattern where an object receives the objects it depends on from outside, instead of creating them itself.
+
+  class Engine {
+    void start() {
+        System.out.println("Engine started");
+    }
+}
+
+class Car {
+    private Engine engine;
+
+    Car(Engine engine) {
+        this.engine = engine;
+    }
+
+    void drive() {
+        engine.start();
+    }
+}
+
+------
+
+Types of Dependency Injection
+1. Constructor Injection (Most Common)
+2. Setter Injection
+3. Field Injection (Common in Spring)
+
+
+Dependency Injection is a design pattern in which the dependencies required by a class are provided from outside rather than being created inside the class. This reduces coupling, improves testability, and is widely used in frameworks like Spring through constructor, setter, or field injection.
+
+Concrete Class : 
+A concrete class is a class that is fully implemented and can be instantiated using new.
+This is a concrete class because:
+
+It has implementation.
+It is not abstract.
+You can create objects from it.
+
+Abstract Class : 
+An abstract class is an incomplete class that cannot be instantiated directly.
+If a method have abstract then the class should mentioned as abstract.
+
+Interface
+
+An interface is a pure contract (though it can have default/static methods).
+In One Sentence
+
+A contract in Java is a set of method definitions (usually in an interface) that specifies what a class must provide, while leaving how it provides it to the implementing class.
+
+-----
+
+
+What is Dynamic Method Dispatch?
+
+- Dynamic Method Dispatch is the mechanism by which Java resolves overridden method calls at runtime based on the actual object being referenced rather than the reference type. It is the foundation of runtime polymorphism and enables flexible designs such as Dependency Injection.
+
+**  Golden Rule**
+
+**Whenever you see:**
+
+Parent ref = new Child();
+
+or
+
+Interface ref = new Implementation();
+
+remember:
+
+Compile Time
+
+Uses:
+
+Reference Type
+
+to check whether the method exists.
+
+Runtime
+
+Uses:
+
+Actual Object Type
+
+to decide which implementation to execute.
+
+----
+
+
 
 
 
