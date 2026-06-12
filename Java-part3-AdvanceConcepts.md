@@ -221,12 +221,46 @@ Generics :
   -x-x-x-x-x-x-x-x-x-x--x-x-x-x-x-x-x-x-x--x-x
 Generic Classes :
 
-   public class GenericList<T>(){
+   public class GenericList<T>{
+    private T[] items = (T[]) new Object[10];
+    private int count;
+
+    public void add(T item){
+      items[count++] = item;
+    }
+
+  public T get(int index){
+    return items[index];
+  }
+  
   }
 
+  Main class :
+
+  var list = new GenericList<Integer>();
+  list.add(1); // here we can add string. this is the benifiut of Generics.
+
+
+----
+
+If we need to use User object
+ var list = new GenericList<User>();
+  list.add(new User());
+
+  User user = list.get(0);
+
+-- we dont need explict cast here.
+-- we get compile time type safety here.
+
+  
+
   to create object :
-  -  new GenericList<User>();
-  -  new GenericList<String>();
+  -  new GenericList<User>(); // here T is User
+  -  new GenericList<String>(); // here T is String
+ 
+  -  For array declaration we need type.
+  -  private T[] items = (T[]) new Object[10];
+  -  
 
    - Just like a method can have parameter, a class also can have parameter-> T . --> T -> the type of objects we can store in that list
    - 
@@ -285,11 +319,60 @@ Comparable Interface :
 
 Generic Methods: 
 
+- We can create Generic methods inside Generic class and also normal classes.
+- Normal class :
 
+    public class Utils {
+    
+    public static  int max(int first, int second) {
+      return (first > second ? first : second);
+    }
+    
+    }
+  this is normal method... below is the generic method
+
+ public class Utils {
+    
+    public static <T> T max(T first, T second) {
+      return (first > second ? first : second);
+    }
+    
+    }
+
+  - in this approach, it will show one error as cant apply <,> compare operator in generic.
+  - to resolve this , we need to use Comparable interface
+  - <T extends Comparable<T>>
   
+ public class Utils {
+    
+    public static <T Comparable<T>> T max(T first, T second) {
+      return (first.compareTo(second) <0 ) ? second : first ; 
+    }
+    
+    }
 
+    Utils.max(10,20);
+- Once we enter the 10, at the moment, it knows the T is Integer. for the 2nd parameter too.
+- instead of using Object parameter , if we use T generics, at run time ensure to avoid error.     
 
+--x-x-x-x--x-x-x-x-x
 
+Multiple Type Parameter : 
+- consider we can have multiple parameters in a method. Each paramter may have different type. one in int and one in string and one is boolean.
+- we can use K and V  for different type parameter. or whatever name we can use.
+
+- public static <K,V> void print(K key, V value){
+    Sysytem.out.println(key +" " + value);
+  }
+
+Main class: 
+
+Utils.print(10,20);
+
+Utils.print(10,"success");
+
+ - in this example K can have differnt type and V can have different type. It may have Class as a type also .
+ - 
 
 
 
