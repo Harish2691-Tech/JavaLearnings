@@ -1,1 +1,305 @@
+Java advanced concepts :
 
+- All applications encounter error when they runs.
+- In java these errors are represented as Exceptions.
+- Exception objects, Different types of exception , Handling exceptions, Custom exception type, Chaining exceptions.
+
+---xxx---xx-x-x-x-x-x
+Exceptions : 
+
+- Checked exception - java compiler checks them at compile time.
+- unchecked - this is run time exception - (null pointer exception is the example)
+  - NullPointerException
+• ArithmeticException - value divide by 0
+• IllegalArgumentException - the argument that we passes is not accepted is the exeption
+• IndexOutOfBoundsException - If we try to access an element in an array or a string or a list using an invalid index.(we have 5 element in array and tryto access 10th element)
+• IllegalStateException - we try to call a mthod but the underlying object not in the right state
+
+- Error exception --> stack overflow error or out ofmemory error...when there is a problem in jvm...java virtual machine.
+
+---x-x-x-x-x-x-x-x-x-x-x-x-x
+
+Exceptions heierarchy : 
+
+
+THROWABLE CLASS -> (Parent, top most class). It has below 2 classes.
+  1. EXCEPTION CLASS (CHECKED)                        2. ERROR CLASS -> It represents error that are external to our application (out of memory error)
+     a.RUN TIME EXCEPTION (UNCHECKED)
+
+  Every exception has a) error message    and    b) stack trace. 
+
+
+------xxx-x-x--x-x-x-x-x
+
+Catching exceptions : 
+try {
+var reader = new FileReader (fileName: "file.txt");
+System.out-println("File opened"');|
+} catch (FileNotFoundException ex) {
+System.out-println(ex.getMessage());
+｝
+
+in the ex object we have the exception information.
+
+---xxx-x-x-x-x-x-x-x-x---
+
+Catching multiple types of exception : 
+
+try {
+var reader = new FileReader (fileName: "file.txt");
+System.out.println("File opened"');
+var value = reader.readData();
+}
+
+catch (FileNotFoundException ex) {
+System.out.println(ex.getMessage());
+｝
+catch (IOException e){
+System.out.println("Could not read data");
+}
+
+- multiple catch block
+- Each catch block target a specific type of exception
+- IOException is parent for FileNotFoundException.
+
+- Using vertical bar(|) we can combine multiple exception class -> catch (IOException | Parsexception e)
+
+-x-x-x-x-x-x-x-x-x-x-x-x-x-x-
+
+Finally block : 
+- write after the catch block
+- finally{
+    reader.close();
+  }
+---------x-x-x-x-x-x-x-x-x-x-x
+
+try with resources statement : 
+- Inside try we can write code inside () block. we can write multiple line statements.
+- FileReader will use the interface to close it. dont need to explicitelt implement it.
+- 
+
+public static void show() {
+try ( var
+reader = new FileReader (fileName: "file.txt");
+var
+writer = new FileWriter (fileName: "
+...
+｝
+var value = reader. read ();
+catch (IOException e) {
+System. out-println "Could not read data.");
+｝
+}
+
+---x-x-x-x-x-x-x-x
+throw exceptions : 
+- try... catch ...
+public class Account{
+  public void deposit(float value){
+    if(value <=0){
+      throe new IllegalArgumentException();
+    }
+  }
+}
+
+--- the above one is called defensive programming. It avoids the serious problem doen the road. 
+- returnType methodName() throws ExceptionType
+- void deposit() throws IOException {
+  if(value<=0)
+  throw new IOException();
+  }
+
+ - We are telling this methods it may throw IOException.
+ - It is API or Interface of this method. 
+
+--------x-x-x-x-x-x-x-x
+
+Rethrowing exceptions : 
+- In the catch section we mention throw ex, this means we re-throwing the exception and inform the caller that an exception happened.
+- Without throw e, the exception would stop in the catch block and the caller would never know that an error occurred.
+- catch(IOException e){
+  system.out.println("Logging");
+  throw e;  // this line tells the caller that an exception occured. Caller receives IOException
+  }
+- in the Caller method in catch we can have IOException or Exception or Throwable class. Throwable is parent of all exception classes.
+- 
+---x-x-x-x-x-x-x-x-x-x-x-x-x-x
+Custom exceptions :
+- To write custom exception we can inherit or extends Exception or RunTimeException
+- Exception -check exception / compile time exception
+- RunTimeException - unchecked
+
+- public class InsufficientFundException extends Exception {
+   public InsufficientFundException(){
+    super("insufficient funds")
+    }
+   public InsufficientFundException(string message){
+    super(message)
+    }
+  }
+-----
+
+  catch(InsufficientFundException e){
+  System.out.println(e.getMessage());
+  }
+------x-x-x-x-x-x-x-x-x-x-x-x-x-
+Chaining Exceptions : 
+- Wraping an exception inside a general xception.
+------
+  Real-World Layer Example
+  Controller Layer
+      |
+Service Layer
+      |
+Repository Layer
+      |
+Database
+
+Database fails: :
+SQLException
+
+Repository catches and wraps::
+throw new RepositoryException("DB Error", e);
+
+Service catches and wraps again:
+throw new ServiceException("Account Creation Failed", e);
+
+Result:
+ServiceException
+    Caused by RepositoryException
+        Caused by SQLException
+
+------
+Summary
+
+Exception chaining = one exception contains another exception as its cause.
+----
+Common pattern:
+catch (Exception e) {
+    throw new CustomException(
+        "Meaningful message",
+        e
+    );
+}
+
+-----
+Benefits:
+
+Preserves the original error.
+Adds business-specific context.
+Makes debugging much easier.
+Produces a complete "Caused by" stack trace.
+
+---x-x-x-x-x-x-x-x-x-x-x-x-xxxxxxx----xxxxxx----
+xxxxxxx----xxxxxx-----xxxxx------xxxxx---------
+
+Generics : 
+- Manu of the collection classes are implemented using Generics. 
+- we can use object type as generic functions. but if u provide int or bool we have to explecitly cast it to convert. if 2nd avlue is some other type we get casscastexception error. To avoid this we use generics.
+- **Every primitive type in jave have a wrapper class.**
+
+- We cant use primitive types in generics, to overcome this we can use wrapper class of the primitive type.
+- int -- Integer
+- float -- Float class
+- boolean -- Boolean class
+
+  --x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
+
+  Generics and primitve types : 
+
+- Example :
+   GenericList<Integer> numbers = new GenericList<Integer>();
+  or
+   GenericList<Integer> numbers = new GenericList<>();
+
+    numbers.add(1);
+  - java compiler is going to put this primitive value inside a box is called as Boxing
+ 
+  - int number  = numbers.get(0); // unboxing
+   Java compiler is going to extract the value from Integer object.
+    
+  -x-x-x-x-x-x-x-x-x-x--x-x-x-x-x-x-x-x-x--x-x
+Generic Classes :
+
+   public class GenericList<T>(){
+  }
+
+  to create object :
+  -  new GenericList<User>();
+  -  new GenericList<String>();
+
+   - Just like a method can have parameter, a class also can have parameter-> T . --> T -> the type of objects we can store in that list
+   - 
+
+  xxxx-x-x-x-x--x-x-x-x-x--x-x-x
+constraints :
+- need to study deeply
+
+- xxx-x-x-x-x-x--x-x--x-x--x-x
+
+Type Erasure:
+- after compile the java code will convert into bute code. this is platform independent. bcoz, byte code can run in any platfor like windows, mac and linux
+- the generic code to byte code-> if we use constraint, it converts to particular constraint type  or else it will be object array.
+
+- Type Erasure is the process by which Java removes generic type information during compilation.
+
+-------
+Bounded Generics
+Source Code
+
+class Box<T extends Number> {
+    T value;
+}
+
+After Erasure
+class Box {
+    Number value;
+}
+
+When a bound exists, Java replaces T with the bound.
+----
+
+Limitation 1: Cannot Create Generic Arrays
+T[] arr = new T[10];
+Because at runtime Java doesn't know what T is.
+
+Limitation 2: Cannot Use instanceof with Generic Types
+if(list instanceof List<String>) {
+}
+Because runtime doesn't know about String.
+
+----x-x-x--x-x-x--x-x
+Comparable Interface : 
+- Comparable interface is used to compare the objects.
+- Comparable is a generic interface.because here we have <T> parameter
+- this interface as a single method -> int compareTo(T o) -> Compares this object to a specific object.
+
+- For our class if we want to use this interface, we have to implement it with type. -> Comparable<T> --> eg : Comparable<User>
+- If we pass with out type i mean -->  Class User implements Comparable {}
+- it render the --> int compareTo (object o)  { return 0};
+- It will comaprethe Object class.
+- Problem with Object class is -> we have to done explicet cating here. Also it is possible to get Cating exception at run time.
+- Thats why we have to specify the generic type argument. Comparable<User> { }
+
+---x-x-x-x-x-x-x-x-x-
+
+Generic Methods: 
+
+
+  
+
+
+
+
+
+
+  
+  
+
+
+   
+
+
+
+
+  
