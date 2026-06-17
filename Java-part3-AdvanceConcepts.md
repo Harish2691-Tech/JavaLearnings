@@ -372,7 +372,55 @@ Utils.print(10,20);
 Utils.print(10,"success");
 
  - in this example K can have differnt type and V can have different type. It may have Class as a type also .
- - 
+------
+Multiple Type parameters in Java : 
+- In
+
+- public class KeyValuePairs <K,V> {
+    private K key;
+    private V value;
+
+    public KeyValuePairs(K key, V value) {
+      this.key = key;
+      this.value = value;
+    }
+  
+  }
+
+
+-------
+
+Generic classes and inheritance :
+
+-----
+
+Wildcards :
+
+- with wildcards, we can cast generic types.
+-------
+
+-x-x-x-x-x--x-x-x-x-x--x-x-x-x-x-x--x-x-x-x-x-x--x-x-x-x-x-x-x-x-x-x-x-x--x-x-x-x
+
+Collections :
+
+- Collection farmeworks
+- parent of collection framework is Iterable interface.
+- Iterable -> Collection
+                  |
+  ----------------------------
+  |            |             |
+  List        Queue          Set
+  |              |            |
+ArrayList  Priority Queue    HashSet
+  |
+LinkedList
+
+
+
+
+  
+
+
 
 
 
