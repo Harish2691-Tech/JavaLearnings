@@ -416,7 +416,9 @@ ArrayList  Priority Queue    HashSet
 LinkedList
 
 
-
+Collections :
+- Collection is an interface. ArrayList is a class that implement the Collections interface.
+- 
 
   
 
