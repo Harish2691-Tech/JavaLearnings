@@ -450,7 +450,43 @@ List :
 
 -  In collections we dont care about the indexes of object. we just care about adding or removing them from a collection.
 -  But in List we should care about index of bjects and a collection. we should use the list interface.
--  
+
+-  CODE :
+   List<String> list = new ArrayList<>();
+   list.add("a"); // add singke element.
+   list.add(0,"a+"); // add elementr in the mentioned index.
+
+   // to add multiple elements
+   List<String> list = new ArrayList<>();
+   Collections.addAll(list,"a","b","c");
+
+   // To get the 1st element to display
+   System.out.println(list.get(0));
+
+   // replace an object in the given index
+   list.set(0,"a+");
+
+   // remove an in dex of element
+   list.remove(0);
+
+   // index of the element
+   list.indexOf("a");
+
+   // last index of an element
+   list.lastIndexOf("a") // if a multiple times present, it gives the last index of a
+
+   // sublist
+   // fromIndex → Inclusive (included)
+   // toIndex → Exclusive (not included)
+   list.subList(0,2) // 0 -> start index and 2 is last index
+
+  -x-x-x-x-x-x-x-x-x-x-x-x--x-x-x-x-x
+   
+
+   
+
+   
+   
   
   
   
