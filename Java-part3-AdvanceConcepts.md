@@ -418,7 +418,42 @@ LinkedList
 
 Collections :
 - Collection is an interface. ArrayList is a class that implement the Collections interface.
-- 
+- In collections we dont care about the indexes of object. we just care about adding or removing them from a collection.
+
+- code :
+   Collection<String> collection =  new rrayList<>();
+   Collections.addAll(collection, "a","b","c",);
+   collection.size(); // it shows the length of the collection
+   collection.isEmpty(); // it provides boolean value true / false;
+   collection.remove("a") // this a item will be removed from collection object.
+
+   collection.clear() // remove all items from the object. it displays [] array;
+   collection.contains("a"); // it checks the collection whether it have a or not provide true / false ;
+
+To check two different collection objects : 
+- (colObject1.equals(colObject2))
+
+---x-x-x-x-x-x-x-x-x-x-x--x-x-x--x
+
+List : 
+- List interface
+- java.util.List
+- java.util.ArrayList
+- It represents a order collection also called sequence.
+- With list we can access object by index.
+
+- Iterable
+     |
+ Collections
+     |
+    List
+
+-  In collections we dont care about the indexes of object. we just care about adding or removing them from a collection.
+-  But in List we should care about index of bjects and a collection. we should use the list interface.
+-  
+  
+  
+  
 
   
 
