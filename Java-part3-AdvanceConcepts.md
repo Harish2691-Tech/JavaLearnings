@@ -481,7 +481,22 @@ List :
    list.subList(0,2) // 0 -> start index and 2 is last index
 
   -x-x-x-x-x-x-x-x-x-x-x-x--x-x-x-x-x
-   
+
+   Comparable interface : 
+   - For a user defined class, to use Collections.sort(customes) functionality, we have to implement Comparable interface on that class.
+
+   - we have to override the compareTo method
+
+      Public int compareTo( Customer other){
+      return name.compareTo(other.name);
+     }
+
+    - still we wont get the proper output, it will give the object refernce in the heap. default representation of a customer object as a string
+    -- To get proper output, use 
+
+    Public String  toString(){
+    return name
+    }
 
    
 
