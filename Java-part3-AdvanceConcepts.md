@@ -499,9 +499,46 @@ List :
     }
 
    
+Yes. When an object is passed to System.out.println(), Java invokes that object's toString() method. If the class does not override toString(), the default implementation from Object is used, which prints ClassName@hashcode
 
-   
-   
+
+-x-x-x-x-x-x-x-x-x--x-x-x-x--x-x-x-x-x
+
+Comparator interface :
+- 
+
+class EmailComparator implements Comparator<Customer> {
+
+    @Override
+    public int compare(Customer c1, Customer c2) {
+        return c1.email.compareTo(c2.email);
+    }
+}
+
+
+Think of it like:
+
+Collections.sort(customers, sortingRule);
+
+Why use Comparator when Customer already implements Comparable?
+
+Because you may need multiple sorting strategies.
+Customer
+├── sort by name
+├── sort by email
+├── sort by age
+└── sort by salary
+
+Comparable gives one default ordering.
+
+Comparator gives multiple custom orderings.
+
+
+ ---------x-x-x-x-x-x-x-x-x-x--x-x-x-x-x-x-x
+
+ The Queue interface : 
+ - 
+ 
   
   
   
