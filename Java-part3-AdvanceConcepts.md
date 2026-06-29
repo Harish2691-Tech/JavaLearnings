@@ -482,7 +482,7 @@ List :
 
   -x-x-x-x-x-x-x-x-x-x-x-x--x-x-x-x-x
 
-   Comparable interface : 
+  Comparable interface : 
    - For a user defined class, to use Collections.sort(customes) functionality, we have to implement Comparable interface on that class.
 
    - we have to override the compareTo method
