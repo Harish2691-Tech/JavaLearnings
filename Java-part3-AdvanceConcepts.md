@@ -537,7 +537,42 @@ Comparator gives multiple custom orderings.
  ---------x-x-x-x-x-x-x-x-x-x--x-x-x-x-x-x-x
 
  The Queue interface : 
- - 
+ - It extends the Collection interface.
+ - Every queue is a collection a swell
+ - we process jobs based on order we receive them.
+ - Eg : think of printer in org, It receives various job, it puts them in a queue and process them one by one in the order of it received them.
+ - Majorly kown impomelemnting clsses are-> ArrayDeque  and   PriorityQueue
+ - Deque is short for Double ended queue. --> Its a special type of queue that has 2 ends.  --> items that can enter from either ends.
+ - Priority Queue ->  Each items get a priority. Priority determines the position of the item in the queue. Items with the higher priority move to the front of the queue. A common application of this is a queue that your operation system uses to manage the processes. Some processes have high priority so they get more CPU time  and some as low. 
+
+   Queue<String> queue = new ArrayDeque<>();
+   queue.add("c");
+   queue.add("a");
+   queue.add("b");
+   // b -> a -> c // c is in the front of the queue.
+
+   // another methods to addindg an item in a queue is offer
+   queue.offer("d");
+
+   - difference b/w add and offer
+   -  its depend upon implementation. for ArrayDeque there is no much difference
+   -  but in some implementations the queue my have a limited size. In those cases if the queue gets full, if we use add methods it may throw exception where as the offer method returns false.
+  
+   -  To get the front item of ther queue is peek
+  
+   -  var front = queue.peek(); // will retuent eh front item.
+   -  one moefor the front item is element()
+  
+   -  diff b/w peek and element
+   -  peek returns null id the queue is empty but elelemnt throws an exception (NoSucgElementException).
+  
+   -  remove() methods
+   -  this will remove the item of the front in the queue
+  
+   -  poll () methos also will  remove the item.  return null if the queue is empty
+  
+   -  diff remove / poll
+   -  if no item in the queue poll will return null but remove will throw 
  
   
   
