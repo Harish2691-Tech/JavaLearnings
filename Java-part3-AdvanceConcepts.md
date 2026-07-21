@@ -572,7 +572,9 @@ Comparator gives multiple custom orderings.
    -  poll () methos also will  remove the item.  return null if the queue is empty
   
    -  diff remove / poll
-   -  if no item in the queue poll will return null but remove will throw 
+   -  if no item in the queue poll will return null but remove will throw
+  
+ - 
  
   
   
