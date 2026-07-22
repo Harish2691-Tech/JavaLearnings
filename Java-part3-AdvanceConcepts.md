@@ -574,7 +574,70 @@ Comparator gives multiple custom orderings.
    -  diff remove / poll
    -  if no item in the queue poll will return null but remove will throw
   
- - 
+   x-x-x-x--x-x-xxxxx-x-x--x-x-x-x-x-x-x
+
+   Set Interface : 
+  - Set interface only accept unique values. If we add duplicate values(same values added repeatedly) only one item will taken.
+  - And it doesnt maintain order. If we add an item at 1st , this should not need be in the 1st of the set.
+  - A Set does not maintain insertion order. Even if you add an item first, it is not guaranteed to appear as the first element in the set.
+  - It do not rely on the order, a set y guarantees the uniqueness .
+
+  - To remove duplicates from a collection we have option using Set (HashSet)
+
+    Collection<String> collection = new ArrayList<>();
+    Collections.addAll(collection,"a","b","c","c");
+    Set<String> set = new HashSet<>(collection);
+    sop(set); // print unique
+
+  - Add one set to another set, like union operation.
+
+  - Set<String> set1 = new HashSet<>(Arrays.asList("a","b","c")) ;
+  - Set<String> set2 = new HashSet<>(Arrays.asList("b","c","d")) ;
+
+  - // union
+  - set1.addAll(set2);
+  - sopln(set1); // unique elements displayed - a,b,c,d
+
+  - - // intersection
+  - set1.retainAll(set2);
+  - sopln(set1); // common values only displayed  -b,c
+
+  - // Difference
+  - what items in the 1st set that we dont have in 2nd set
+  - set1.removeAll(set2);
+  - sopln(set1); -- [ a ]
+
+    ---x--x-x-x-x-x--x-x-x-x-x-x
+
+    Maps :
+
+    Hash table
+
+    - Hash table is one of the important concept in DSA.
+    - It present in all the language
+    - For example we have a list of customers, if we want to get a particular customer's email means we send the customer list in a for loop and check the customer to get the email. It costs big O(n). if we have 1 millon customer in that list it iterates 1millon times to find the answer.
+    - If we use Hash map or Hash table -> with O(1) we get the output.
+    - IN JAVA , the interface called Map which represents Hash table.
+   
+    - // Java -> Maps or HashMaps
+    - // c# -> Dictionary
+    - // python -> Dictionary
+    - 
+    - // Javascript -> objects
+    - objects that we create in js  are hash tables
+    - var person = {name : "a"};
+
+      -----x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
+
+Map interface :
+- In java we have an interface called Map. This interface is declared in java.util package.
+- Its part of Collections framework but its not part of this hierarchy that iterable or Collection . Its not a collection, not a iterable.
+- Its something entirely different.
+- This Map interface has 2 generic type parameters K and V. which are short for key and value
+- So with Map we are essentially mapping a key to a  value
+- Key is that we use to look up the object like look up the customer.
+- 
+      
  
   
   
